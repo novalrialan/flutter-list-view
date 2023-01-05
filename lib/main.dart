@@ -5,7 +5,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  List<Color> myColor = [
+  final List<Color> myColor = [
     Colors.red,
     Colors.green,
     Colors.blue,
@@ -27,11 +27,7 @@ class MyApp extends StatelessWidget {
           // scrollDirection: Axis.horizontal, membuat tampilan content horizontal kesamping
           itemCount: myColor.length,
           itemBuilder: (context, index) {
-            return Container(
-              height: 300,
-              width: 300,
-              color: myColor[index],
-            );
+            return Text("Halo");
           },
         ),
       ),
