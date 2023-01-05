@@ -18,7 +18,12 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("List View"),
         ),
-        body: ListView.builder(
+        body: ListView.separated(
+          separatorBuilder: (context, index) {
+            return Divider(
+              color: Colors.black,
+            );
+          },
           // scrollDirection: Axis.horizontal, membuat tampilan content horizontal kesamping
           itemCount: myColor.length,
           itemBuilder: (context, index) {
