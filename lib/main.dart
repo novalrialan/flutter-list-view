@@ -5,27 +5,11 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  List<Widget> myList = [
-    Container(
-      height: 300,
-      width: 300,
-      color: Colors.red,
-    ),
-    Container(
-      height: 300,
-      width: 300,
-      color: Colors.green,
-    ),
-    Container(
-      height: 300,
-      width: 300,
-      color: Colors.blue,
-    ),
-    Container(
-      height: 300,
-      width: 300,
-      color: Colors.amber,
-    ),
+  List<Color> myColor = [
+    Colors.red,
+    Colors.green,
+    Colors.blue,
+    Colors.amber,
   ];
   @override
   Widget build(BuildContext context) {
@@ -34,9 +18,16 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("List View"),
         ),
-        body: ListView(
+        body: ListView.builder(
           // scrollDirection: Axis.horizontal, membuat tampilan content horizontal kesamping
-          children: myList,
+          itemCount: myColor.length,
+          itemBuilder: (context, index) {
+            return Container(
+              height: 300,
+              width: 300,
+              color: myColor[index],
+            );
+          },
         ),
       ),
     );
