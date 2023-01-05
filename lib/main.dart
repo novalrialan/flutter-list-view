@@ -5,6 +5,28 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  List<Widget> myList = [
+    Container(
+      height: 300,
+      width: 300,
+      color: Colors.red,
+    ),
+    Container(
+      height: 300,
+      width: 300,
+      color: Colors.green,
+    ),
+    Container(
+      height: 300,
+      width: 300,
+      color: Colors.blue,
+    ),
+    Container(
+      height: 300,
+      width: 300,
+      color: Colors.amber,
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,28 +36,7 @@ class MyApp extends StatelessWidget {
         ),
         body: ListView(
           // scrollDirection: Axis.horizontal, membuat tampilan content horizontal kesamping
-          children: [
-            Container(
-              height: 300,
-              width: 300,
-              color: Colors.red,
-            ),
-            Container(
-              height: 300,
-              width: 300,
-              color: Colors.green,
-            ),
-            Container(
-              height: 300,
-              width: 300,
-              color: Colors.blue,
-            ),
-            Container(
-              height: 300,
-              width: 300,
-              color: Colors.amber,
-            ),
-          ],
+          children: myList,
         ),
       ),
     );
