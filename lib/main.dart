@@ -11,6 +11,15 @@ class MyApp extends StatelessWidget {
     Colors.blue,
     Colors.amber,
   ];
+
+  final List<Widget> myList = List.generate(
+      100,
+      (index) => Text(
+            "${index + 1}",
+            style: TextStyle(
+              fontSize: 20 + double.parse(index.toString()),
+            ),
+          ));
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,17 +27,8 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("List View"),
         ),
-        body: ListView.separated(
-          separatorBuilder: (context, index) {
-            return Divider(
-              color: Colors.black,
-            );
-          },
-          // scrollDirection: Axis.horizontal, membuat tampilan content horizontal kesamping
-          itemCount: myColor.length,
-          itemBuilder: (context, index) {
-            return Text("Halo");
-          },
+        body: ListView(
+          children: myList,
         ),
       ),
     );
